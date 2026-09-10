@@ -13,7 +13,7 @@ fi
 
 # cpu overclock
 sudo pacman -S --needed python-pipx stress
-[ -d bc250_smu_oc ] || git clone https://github.com/bc250-collective/bc250_smu_oc.git ~/bc250_smu_oc
+[ -d bc250_smu_oc ] || git clone https://github.com/bc250-collective/bc250_smu_oc.git
 cd bc250_smu_oc
 pipx install --force .
 export PATH="$HOME/.local/bin:$PATH"
