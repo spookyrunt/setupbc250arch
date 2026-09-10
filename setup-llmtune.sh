@@ -19,3 +19,7 @@ sudo pacman -S --needed --noconfirm base-devel cmake git vulkan-headers vulkan-i
 llmtune setup
 llmtune build install vulkan
 llmtune build install prism-vulkan
+
+# link
+sudo ln -s /var/lib/llmtune/src/prism-vulkan/build/bin/llama-server /usr/local/bin/llama-server
+# sudo ln -s /var/lib/llmtune/src/vulkan/build/bin/llama-server /usr/local/bin/llama-server

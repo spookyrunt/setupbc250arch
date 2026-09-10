@@ -37,6 +37,7 @@ if ! command -v yay >/dev/null 2>&1; then
   rm -rf /tmp/yay
 fi
 yay -S --needed --noconfirm cyan-skillfish-governor-smu
+sudo systemctl enable --now cyan-skillfish-governor-smu.service
 sudo pacman -S --needed --noconfirm radeontop
 
 # acpi fix (C-states only, P-states doesn't work per upstream README)
