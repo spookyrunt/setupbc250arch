@@ -15,6 +15,7 @@ The following script is `setup-llmtune.sh` installing:
 - RADV driver
 - huggingface downloader
 - cachenetics/llmtune
+- llama-server
 
 [^1]: ROM: https://gitlab.com/TuxThePenguin0/bc250-bios/-/blob/main/BC250_3.00_CHIPSETMENU.ROM
 (SHA256: 48fbe5d366e6a56e2fdffdca848426216ba1f083610dab63db89d2f4e6c940b5)
