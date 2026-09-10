@@ -4,26 +4,27 @@ set -euo pipefail
 # https://elektricm.github.io/amd-bc250-docs/bios/flashing/#post-flash-configuration
 
 # memcfg
-git clone https://github.com/fanoush/bc250_memcfg
-cd bc250_memcfg
-make
-sudo ./bc250memcfg UMA_SIZE 512
+[ -d bc250_memcfg ] || git clone https://github.com/fanoush/bc250_memcfg
+(
+  cd bc250_memcfg
+  make
+  sudo ./bc250memcfg UMA_SIZE 512
+)
 
 # amd iommu off
-grep -qw amd_iommu=off /etc/kernel/cmdline || echo amd_iommu=off | sudo tee -a /etc/kernel/cmdline
-grep -qw quiet /etc/kernel/cmdline || echo quiet | sudo tee -a /etc/kernel/cmdline
+grep -qw amd_iommu=off /etc/kernel/cmdline || echo -n ' amd_iommu=off' | sudo tee -a /etc/kernel/cmdline
+grep -qw quiet /etc/kernel/cmdline || echo -n ' quiet' | sudo tee -a /etc/kernel/cmdline
 # sudo mkinitcpio -P
 
 # kernel parameters for maximum GPU memory access (16GB / full physical pool)
-sudo sed -i \
+sudo sed -i -E \
   -e 's/ *amdgpu\.gttsize=[0-9]*//g' \
   -e 's/ *ttm\.pages_limit=[0-9]*//g' \
   -e 's/ *ttm\.page_pool_size=[0-9]*//g' \
   /etc/kernel/cmdline
-grep -qw 'ttm.pages_limit=4194304' /etc/kernel/cmdline ||
-  echo 'ttm.pages_limit=4194304' | sudo tee -a /etc/kernel/cmdline
-grep -qw 'ttm.page_pool_size=4194304' /etc/kernel/cmdline ||
-  echo 'ttm.page_pool_size=4194304' | sudo tee -a /etc/kernel/cmdline
+echo -n ' ttm.pages_limit=4194304' | sudo tee -a /etc/kernel/cmdline
+echo -n ' ttm.page_pool_size=4194304' | sudo tee -a /etc/kernel/cmdline
+sudo sed -i -E -e 's/[[:space:]]+/ /g' -e 's/^[[:space:]]+//' -e 's/[[:space:]]+$//' /etc/kernel/cmdline
 # sudo mkinitcpio -P
 
 # gpu governor & radeontop
@@ -31,12 +32,12 @@ if ! command -v yay >/dev/null 2>&1; then
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   (
     cd /tmp/yay
-    makepkg -si
+    makepkg -si --noconfirm
   )
   rm -rf /tmp/yay
 fi
-yay -S --needed cyan-skillfish-governor-smu
-sudo pacman -S --needed radeontop
+yay -S --needed --noconfirm cyan-skillfish-governor-smu
+sudo pacman -S --needed --noconfirm radeontop
 
 # acpi fix (C-states only, P-states doesn't work per upstream README)
 [ -d bc250-acpi-fix-updated-8c ] || git clone https://github.com/mendesrr/bc250-acpi-fix-updated-8c
@@ -50,7 +51,8 @@ sudo mkinitcpio -P
 # governer gpu clock boost
 sudo sed -i '/^\[frequency-range\]/,/^\[/ s/^max = [0-9]*/max = 2230/' /etc/cyan-skillfish-governor-smu/config.toml
 sudo sed -i '/frequency = 2000/{n;s/voltage = [0-9]*/voltage = 1000/}' /etc/cyan-skillfish-governor-smu/config.toml
-cat <<'EOF' | sudo tee -a /etc/cyan-skillfish-governor-smu/config.toml
+if ! grep -q "frequency = 2230" /etc/cyan-skillfish-governor-smu/config.toml; then
+  cat <<'EOF' | sudo tee -a /etc/cyan-skillfish-governor-smu/config.toml
 
 [[safe-points]]
 frequency = 2050
@@ -80,6 +82,7 @@ voltage = 1100
 frequency = 2300
 voltage = 1150
 EOF
+fi
 sudo systemctl restart cyan-skillfish-governor-smu
 
 # 8 core cpu unlock
@@ -93,7 +96,7 @@ sudo systemctl start cyan-skillfish-governor-smu
 cd ..
 
 # 24+ ~40 cu gpu unlock
-yay -S --needed umr
+yay -S --needed --noconfirm umr
 echo ""
 echo "Do: e - w - i witin bc250-cu-live-manager.sh"
 curl -L -o bc250-cu-live-manager.sh https://raw.githubusercontent.com/WinnieLV/bc250-cu-live-manager/refs/heads/main/bc250-cu-live-manager.sh
