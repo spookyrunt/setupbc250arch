@@ -17,9 +17,9 @@ sudo pacman -S --needed --noconfirm python-huggingface-hub
 )
 sudo pacman -S --needed --noconfirm base-devel cmake git vulkan-headers vulkan-icd-loader spirv-headers shaderc vulkan-radeon
 llmtune setup
-sudo llmtune build install vulkan --ref=master
+sudo llmtune build install vulkan
 sudo llmtune build install prism-vulkan
-# sudo llmtune build update vulkan --ref=master
+# sudo llmtune build update vulkan --ref=master # unstable for bc250
 
 # link
 sudo ln -s /var/lib/llmtune/src/vulkan/build/bin/llama-server /usr/local/bin/llama-server
