@@ -21,7 +21,7 @@ llmtune build install vulkan
 llmtune build install prism-vulkan
 
 # link
-sudo ln -s /var/lib/llmtune/src/prism-vulkan/build/bin/llama-server /usr/local/bin/llama-server
-sudo ln -s /var/lib/llmtune/src/vulkan/build/bin/llama-server /usr/local/bin/prism-llama-server
+sudo ln -s /var/lib/llmtune/src/vulkan/build/bin/llama-server /usr/local/bin/llama-server
+sudo ln -s /var/lib/llmtune/src/prism-vulkan/build/bin/llama-server /usr/local/bin/prism-llama-server
 sudo ln -s /var/lib/llmtune/models ~/models
 sudo ln -s /.config/llmtune ~/config
