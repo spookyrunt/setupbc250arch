@@ -10,7 +10,7 @@ sudo pacman -S --needed --noconfirm vulkan-tools mesa-utils
 sudo pacman -S --needed --noconfirm python-huggingface-hub
 
 # llmtune
-[ -d build/llmtune ] || git clone https://github.com/cachenetics/llmtune
+[ -d build/llmtune ] || git clone https://github.com/cachenetics/llmtune.git build/llmtune
 (
   cd build/llmtune
   ./install.sh # cargo build --release, installs to /usr/local/bin
@@ -26,3 +26,10 @@ sudo ln -s /var/lib/llmtune/src/vulkan/build/bin/llama-server /usr/local/bin/lla
 sudo ln -s /var/lib/llmtune/src/prism-vulkan/build/bin/llama-server /usr/local/bin/prism-llama-server
 sudo ln -s /var/lib/llmtune/models ~/models
 sudo ln -s /.config/llmtune ~/config
+
+# arieltune
+[ -d build/project-ariel ] || git clone https://github.com/cachenetics/project-ariel.git build/project-ariel
+(
+  cd project-ariel
+  ./install.sh # release build + install to /usr/local/bin
+)
