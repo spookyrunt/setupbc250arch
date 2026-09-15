@@ -28,7 +28,7 @@ sudo ln -s /var/lib/llmtune/models ~/models
 sudo ln -s ~/.config/llmtune ~/config
 (
   cd ~/.config/llmtune
-  mv profile.toml profile.toml.bak
+  [ ! -f profile.toml ] || mv profile.toml profile.toml.bak
 )
 cp profile.toml ~/.config/llmtune/profile.toml
 
