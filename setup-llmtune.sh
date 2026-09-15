@@ -25,7 +25,12 @@ sudo llmtune build install prism-vulkan
 sudo ln -s /var/lib/llmtune/src/vulkan/build/bin/llama-server /usr/local/bin/llama-server
 sudo ln -s /var/lib/llmtune/src/prism-vulkan/build/bin/llama-server /usr/local/bin/prism-llama-server
 sudo ln -s /var/lib/llmtune/models ~/models
-sudo ln -s /.config/llmtune ~/config
+sudo ln -s ~/.config/llmtune ~/config
+(
+  cd ~/.config/llmtune
+  mv profile.toml profile.toml.bak
+)
+cp profile.toml ~/.config/llmtune/profile.toml
 
 # arieltune
 [ -d build/project-ariel ] || git clone https://github.com/cachenetics/project-ariel.git build/project-ariel
