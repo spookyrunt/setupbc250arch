@@ -22,13 +22,13 @@ sudo llmtune build install prism-vulkan
 # sudo llmtune build update vulkan --ref=master # unstable for bc250
 
 # link
-sudo ln -s /var/lib/llmtune/src/vulkan/build/bin/llama-server /usr/local/bin/llama-server
-sudo ln -s /var/lib/llmtune/src/prism-vulkan/build/bin/llama-server /usr/local/bin/prism-llama-server
-sudo ln -s /var/lib/llmtune/models ~/models
-sudo ln -s ~/.config/llmtune ~/config
+[ -f /usr/local/bin/llama-server ] || sudo ln -s /var/lib/llmtune/src/vulkan/build/bin/llama-server /usr/local/bin/llama-server
+[ -f /ust/local/bin/prism-llama-server ] || sudo ln -s /var/lib/llmtune/src/prism-vulkan/build/bin/llama-server /usr/local/bin/prism-llama-server
+[ -d ~/models ] || sudo ln -s /var/lib/llmtune/models ~/models
+[ -d ~/config ] || sudo ln -s ~/.config/llmtune ~/config
 (
   cd ~/.config/llmtune
-  [ ! -f profile.toml ] || mv profile.toml profile.toml.bak
+  [ -f profile.toml ] && mv profile.toml profile.toml.bak
 )
 cp profile.toml ~/.config/llmtune/profile.toml
 
