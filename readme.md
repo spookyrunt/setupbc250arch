@@ -1,5 +1,10 @@
 # setupbc250arch
-Run all scripts one by one after [BIOS flashing](https://elektricm.github.io/amd-bc250-docs/bios/flashing)[^1][^2][^3] on Arch Linux. This project includes two BC-250 install scripts setting up:
+Run the following scripts in order after [BIOS flashing](elektricm.github.io/amd-bc250-docs/bios/flashing)[^1][^2][^3] on Arch Linux.
+1. `setup-bc250-arch-1.sh`
+2. `setup-bc250-arch-2.sh`
+3. `setup-llmtune.sh` (optional)
+
+These BC-250 installation scripts set up:
 - `bc250_memcfg` — lower VRAM split (VRAM minimum) to 512MB
 - Disable `amd_iommu` (kernel parameter)
 - Quiet boot `quiet` (kernel parameter)
@@ -14,7 +19,7 @@ Run all scripts one by one after [BIOS flashing](https://elektricm.github.io/amd
 - GPU from 24 to up to 40 CU/WGP unlock (`bc250-cu-live-manager.sh`)
 - CPU overclock to 3900MHz (`bc250-smu-oc`)
 
-The following script is `setup-llmtune.sh` installing:
+Additionally, `setup-llmtune.sh` installs:
 - huggingface downloader
 - cachenetics/llmtune
 - llama-server (prism-vulkan)
