@@ -27,7 +27,7 @@ echo -n ' ttm.page_pool_size=4194304' | sudo tee -a /etc/kernel/cmdline
 sudo sed -i -E -e 's/[[:space:]]+/ /g' -e 's/^[[:space:]]+//' -e 's/[[:space:]]+$//' /etc/kernel/cmdline
 # sudo mkinitcpio -P
 
-# gpu governor & radeontop
+# gpu governor
 if ! command -v yay >/dev/null 2>&1; then
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   (
@@ -38,7 +38,6 @@ if ! command -v yay >/dev/null 2>&1; then
 fi
 yay -S --needed --noconfirm cyan-skillfish-governor-smu
 sudo systemctl enable --now cyan-skillfish-governor-smu.service
-sudo pacman -S --needed --noconfirm radeontop
 
 # acpi fix (C-states only, P-states doesn't work per upstream README)
 [ -d bc250-acpi-fix-updated-8c ] || git clone https://github.com/mendesrr/bc250-acpi-fix-updated-8c
@@ -85,6 +84,14 @@ voltage = 1150
 EOF
 fi
 sudo systemctl restart cyan-skillfish-governor-smu
+
+# RADV Driver
+sudo sed -i '/^[[:space:]]*#\[multilib\]/,/^[[:space:]]*#Include[[:space:]]*=.*mirrorlist/ s/^[[:space:]]*#//' /etc/pacman.conf
+sudo pacman -Syu --noconfirm mesa vulkan-radeon lib32-vulkan-radeon
+sudo pacman -S --needed --noconfirm vulkan-tools mesa-utils
+
+# radeontop and nvtop
+sudo pacman -S --needed --noconfirm radeontop nvtop
 
 # 8 core cpu unlock
 [ -d bc250-core-cu-unlock ] || git clone https://github.com/GabriWar/bc250-core-cu-unlock

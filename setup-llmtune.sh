@@ -1,11 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-# RADV Driver
-sudo sed -i '/^[[:space:]]*#\[multilib\]/,/^[[:space:]]*#Include[[:space:]]*=.*mirrorlist/ s/^[[:space:]]*#//' /etc/pacman.conf
-sudo pacman -Syu --noconfirm mesa vulkan-radeon lib32-vulkan-radeon
-sudo pacman -S --needed --noconfirm vulkan-tools mesa-utils
-
 # hf download
 sudo pacman -S --needed --noconfirm python-huggingface-hub
 
