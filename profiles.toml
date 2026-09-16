@@ -43,22 +43,13 @@ env = { GGML_VULKAN_DEVICE = "0", GGML_VK_PREFER_HOST_MEMORY = "1" }
 flags = "--host 0.0.0.0 --port 8080 -c 65536 --parallel 1 --flash-attn on --no-mmap --jinja -ngl 99 -t 8 --cache-ram 1024 --cache-reuse 256"
 
 [[profile]]
-id = "mistral-big"
-arch_match = ["llama"]
-quant_match = ["IQ4_NL"]
-build = "vulkan"
-bin = "llama-server"
-env = { GGML_VULKAN_DEVICE = "0", GGML_VK_PREFER_HOST_MEMORY = "1" }
-flags = "--host 0.0.0.0 --port 8080 -c 65536 --parallel 1 --flash-attn on --no-mmap --reasoning off --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --cache-ram 0 --ctx-checkpoints 4"
-[[profile]]
-
 id = "mistral"
 arch_match = ["llama"]
-quant_match = ["IQ2_M", "IQ4_XS"]
+quant_match = ["IQ4_XS"]
 build = "vulkan"
 bin = "llama-server"
 env = { GGML_VULKAN_DEVICE = "0", GGML_VK_PREFER_HOST_MEMORY = "1" }
-flags = "--host 0.0.0.0 --port 8080 -c 131072 --parallel 1 --flash-attn on --no-mmap --reasoning off --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --cache-ram 0 --ctx-checkpoints 4"
+flags = "--host 0.0.0.0 --port 8080 -c 16384 --mmproj Mistral-Small-3.2-24B-mmproj-F16.gguf --parallel 1 --flash-attn on --no-mmap --reasoning off --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --cache-ram 0 --ctx-checkpoints 4"
 
 [[profile]]
 id = "gemma-big"
@@ -68,7 +59,7 @@ build = "vulkan"
 bin = "llama-server"
 # gemma needs a --cache-ram cap (or it OOMs the 14GiB UMA) plus --cache-reuse
 # (or every turn re-evaluates the full prompt).
-flags = "--host 0.0.0.0 --port 8080 -c 131072 --parallel 1 --cache-ram 1024 --cache-reuse 256 --flash-attn on --no-mmap --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --temp 1.0 --top-p 0.95 --top-k 64"
+flags = "--host 0.0.0.0 --port 8080 -c 32768 --mmproj gemma-4-31B-mmproj-F16.gguf --parallel 1 --cache-ram 1024 --cache-reuse 256 --flash-attn on --no-mmap --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --temp 1.0 --top-p 0.95 --top-k 64"
 
 [[profile]]
 id = "gemma"
@@ -77,7 +68,7 @@ build = "vulkan"
 bin = "llama-server"
 # gemma needs a --cache-ram cap (or it OOMs the 14GiB UMA) plus --cache-reuse
 # (or every turn re-evaluates the full prompt).
-flags = "--host 0.0.0.0 --port 8080 -c 262144 --parallel 1 --cache-ram 4096 --cache-reuse 256 --flash-attn on --no-mmap --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --temp 1.0 --top-p 0.95 --top-k 64"
+flags = "--host 0.0.0.0 --port 8080 -c 196608 --mmproj gemma-4-12B-mmproj-F16.gguf --parallel 1 --cache-ram 4096 --cache-reuse 256 --flash-attn on --no-mmap --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --temp 1.0 --top-p 0.95 --top-k 64"
 
 [[profile]]
 id = "lfm2"
@@ -157,4 +148,3 @@ arch_match = []
 build = "vulkan"
 bin = "llama-server"
 flags = "--host 0.0.0.0 --port 8080 -c 16384 --parallel 1 --cache-ram 1024 --cache-reuse 256 --flash-attn on --no-mmap --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0"
-
