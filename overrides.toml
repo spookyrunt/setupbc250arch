@@ -1,0 +1,4 @@
+# llmtune per-model llama.cpp flag overrides (managed by the TUI editor).
+
+[flags]
+"Ornith-1.5-9B-Q8_0.gguf" = "--host 0.0.0.0 --port 8080 -c 131072 --mmproj mmproj-Ornith-1.5-9B-BF16.gguf --parallel 1 --flash-attn on --no-mmap --spec-type draft-mtp --spec-draft-n-max 1 --reasoning off --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --cache-ram 0 --ctx-checkpoints 4"
