@@ -43,9 +43,18 @@ env = { GGML_VULKAN_DEVICE = "0", GGML_VK_PREFER_HOST_MEMORY = "1" }
 flags = "--host 0.0.0.0 --port 8080 -c 65536 --parallel 1 --flash-attn on --no-mmap --jinja -ngl 99 -t 8 --cache-ram 1024 --cache-reuse 256"
 
 [[profile]]
+id = "mistral-big"
+arch_match = ["llama"]
+quant_match = ["IQ4_NL"]
+build = "vulkan"
+bin = "llama-server"
+env = { GGML_VULKAN_DEVICE = "0", GGML_VK_PREFER_HOST_MEMORY = "1" }
+flags = "--host 0.0.0.0 --port 8080 -c 65536 --parallel 1 --flash-attn on --no-mmap --reasoning off --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --cache-ram 0 --ctx-checkpoints 4"
+[[profile]]
+
 id = "mistral"
 arch_match = ["llama"]
-quant_match = ["IQ2_M", "IQ4_XS", "IQ4_NL"]
+quant_match = ["IQ2_M", "IQ4_XS"]
 build = "vulkan"
 bin = "llama-server"
 env = { GGML_VULKAN_DEVICE = "0", GGML_VK_PREFER_HOST_MEMORY = "1" }
@@ -148,3 +157,4 @@ arch_match = []
 build = "vulkan"
 bin = "llama-server"
 flags = "--host 0.0.0.0 --port 8080 -c 16384 --parallel 1 --cache-ram 1024 --cache-reuse 256 --flash-attn on --no-mmap --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0"
+
