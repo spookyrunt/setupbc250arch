@@ -98,10 +98,14 @@ cd ..
 
 # 24+ ~40 cu gpu unlock
 yay -S --needed --noconfirm umr
-curl -L -o bc250-cu-live-manager.sh https://raw.githubusercontent.com/WinnieLV/bc250-cu-live-manager/refs/heads/main/bc250-cu-live-manager.sh
+curl -fL -o bc250-cu-live-manager.sh https://raw.githubusercontent.com/WinnieLV/bc250-cu-live-manager/refs/heads/main/bc250-cu-live-manager.sh
 chmod +x bc250-cu-live-manager.sh
 echo ""
-echo "Note: e - w - i - q witin the following bc250-cu-live-manager.sh"
+echo "========="
+echo "Note: The manager will start now."
+echo "Use e, w, i, and q in that order when prompted."
+echo "If something goes wrong, restart it with ./bc250-cu-live-manager.sh"
+echo "========="
 read -p "Press enter to continue..."
 sudo ./bc250-cu-live-manager.sh
 
