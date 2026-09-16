@@ -12,7 +12,7 @@ if [ "$CORES" -ne 8 ]; then
 fi
 
 # cpu overclock
-sudo pacman -S --needed python-pipx stress
+sudo pacman -S --needed --noconfirm python-pipx stress
 [ -d bc250_smu_oc ] || git clone https://github.com/bc250-collective/bc250_smu_oc.git
 cd bc250_smu_oc
 pipx install --force .
