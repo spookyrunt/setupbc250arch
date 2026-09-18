@@ -42,6 +42,6 @@ sudo cp history.json /var/lib/llmtune/localhost/history.json
 # arieltune
 [ -d build/project-ariel ] || git clone https://github.com/cachenetics/project-ariel.git build/project-ariel
 (
-  cd project-ariel
+  cd build/project-ariel
   ./install.sh # release build + install to /usr/local/bin
 )
