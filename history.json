@@ -1,0 +1,483 @@
+[
+  {
+    "ts": 1789722082,
+    "node": "localhost",
+    "model": "MiniCPM5-2B-Q8_0.gguf",
+    "arch": "llama",
+    "quant": "Q8_0",
+    "ctx": 65536,
+    "profile": "llama-light",
+    "perf": {
+      "prompt_tok_s": 1494.8,
+      "gen_tok_s": 120.5,
+      "ttft_ms": 342.5,
+      "total_ms": 1405.0,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 10,
+        "gfxclk_min": 1000,
+        "gfxclk_max": 2000,
+        "gfxclk_avg": 1730,
+        "uclk_mhz": 450,
+        "temp_peak_c": 60.8,
+        "power_avg_w": 43.6
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789721878,
+    "node": "localhost",
+    "model": "Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ2_M.gguf",
+    "arch": "qwen35moe",
+    "quant": "IQ2_M",
+    "ctx": 131072,
+    "profile": "qwen35moe",
+    "perf": {
+      "prompt_tok_s": 464.4,
+      "gen_tok_s": 92.9,
+      "ttft_ms": 1102.9,
+      "total_ms": 2481.4,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 84,
+        "gfxclk_min": 1000,
+        "gfxclk_max": 2000,
+        "gfxclk_avg": 1166,
+        "uclk_mhz": 450,
+        "temp_peak_c": 60.0,
+        "power_avg_w": 39.2
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789721773,
+    "node": "localhost",
+    "model": "Qwen3.6-35B-A3B-UD-IQ2_M.gguf",
+    "arch": "qwen35moe",
+    "quant": "IQ2_M",
+    "ctx": 131072,
+    "profile": "qwen35moe",
+    "perf": {
+      "prompt_tok_s": 474.0,
+      "gen_tok_s": 95.4,
+      "ttft_ms": 1080.1,
+      "total_ms": 2422.2,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 80,
+        "gfxclk_min": 1000,
+        "gfxclk_max": 2000,
+        "gfxclk_avg": 1170,
+        "uclk_mhz": 450,
+        "temp_peak_c": 61.5,
+        "power_avg_w": 39.6
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789715818,
+    "node": "localhost",
+    "model": "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf",
+    "arch": "qwen35moe",
+    "quant": "IQ3_XXS",
+    "ctx": 8192,
+    "profile": "qwen35moe-big",
+    "perf": {
+      "prompt_tok_s": 448.6,
+      "gen_tok_s": 88.5,
+      "ttft_ms": 1141.4,
+      "total_ms": 2588.5,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 92,
+        "gfxclk_min": 1000,
+        "gfxclk_max": 2000,
+        "gfxclk_avg": 1161,
+        "uclk_mhz": 450,
+        "temp_peak_c": 66.8,
+        "power_avg_w": 40.2
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789715624,
+    "node": "localhost",
+    "model": "Qwen3.8-27B-UD-IQ3_XXS.gguf",
+    "arch": "qwen35",
+    "quant": "IQ3_XXS",
+    "ctx": 32768,
+    "profile": "qwen35-big",
+    "perf": {
+      "prompt_tok_s": 121.7,
+      "gen_tok_s": 21.0,
+      "ttft_ms": 4208.0,
+      "total_ms": 10295.1,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 112,
+        "gfxclk_min": 1000,
+        "gfxclk_max": 2000,
+        "gfxclk_avg": 1455,
+        "uclk_mhz": 450,
+        "temp_peak_c": 72.8,
+        "power_avg_w": 36.9
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789714925,
+    "node": "localhost",
+    "model": "Qwen3.8-27B-UD-IQ3_XXS.gguf",
+    "arch": "qwen35",
+    "quant": "IQ3_XXS",
+    "ctx": 32768,
+    "profile": "qwen35-big",
+    "perf": {
+      "prompt_tok_s": 121.7,
+      "gen_tok_s": 21.0,
+      "ttft_ms": 4205.6,
+      "total_ms": 10287.4,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 105,
+        "gfxclk_min": 1000,
+        "gfxclk_max": 2000,
+        "gfxclk_avg": 1488,
+        "uclk_mhz": 450,
+        "temp_peak_c": 71.0,
+        "power_avg_w": 36.1
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789560823,
+    "node": "localhost",
+    "model": "Ternary-Bonsai-27B-Q2_0.gguf",
+    "arch": "qwen35",
+    "quant": "Q2_0",
+    "ctx": 262144,
+    "profile": "qwen35-ternary",
+    "perf": {
+      "prompt_tok_s": 131.2,
+      "gen_tok_s": 20.8,
+      "ttft_ms": 3903.5,
+      "total_ms": 10066.3,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 74,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 32,
+        "uclk_mhz": 450,
+        "temp_peak_c": 73.8,
+        "power_avg_w": 29.6
+      }
+    },
+    "notes": "",
+    "build": "9fcaed763ccd",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789560724,
+    "node": "localhost",
+    "model": "gemma-4-31B-it-UD-IQ2_M.gguf",
+    "arch": "gemma4",
+    "quant": "IQ2_M",
+    "ctx": 32768,
+    "profile": "gemma-big",
+    "perf": {
+      "prompt_tok_s": 101.4,
+      "gen_tok_s": 16.7,
+      "ttft_ms": 5049.2,
+      "total_ms": 12737.7,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 129,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 17,
+        "uclk_mhz": 450,
+        "temp_peak_c": 72.5,
+        "power_avg_w": 32.8
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789560391,
+    "node": "localhost",
+    "model": "Mistral-Small-3.2-24B-Instruct-2506-IQ4_XS.gguf",
+    "arch": "llama",
+    "quant": "IQ4_XS",
+    "ctx": 16384,
+    "profile": "mistral",
+    "perf": {
+      "prompt_tok_s": 137.5,
+      "gen_tok_s": 20.6,
+      "ttft_ms": 3724.2,
+      "total_ms": 9943.4,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 121,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 9,
+        "uclk_mhz": 450,
+        "temp_peak_c": 72.3,
+        "power_avg_w": 37.8
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789559446,
+    "node": "localhost",
+    "model": "Ornith-1.5-9B-Q8_0.gguf",
+    "arch": "qwen35",
+    "quant": "Q8_0",
+    "ctx": 131072,
+    "profile": "qwen35",
+    "perf": {
+      "prompt_tok_s": 393.8,
+      "gen_tok_s": 36.4,
+      "ttft_ms": 1300.5,
+      "total_ms": 4813.8,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 71,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 6,
+        "uclk_mhz": 450,
+        "temp_peak_c": 64.8,
+        "power_avg_w": 38.5
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789554529,
+    "node": "localhost",
+    "model": "gemma-4-12B-it-qat-UD-Q4_K_XL.gguf",
+    "arch": "gemma4",
+    "quant": "Q4_K_XL",
+    "ctx": 131072,
+    "profile": "gemma",
+    "perf": {
+      "prompt_tok_s": 292.8,
+      "gen_tok_s": 38.3,
+      "ttft_ms": 1748.7,
+      "total_ms": 5089.9,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 35,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 11,
+        "uclk_mhz": 450,
+        "temp_peak_c": 71.8,
+        "power_avg_w": 33.1
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789553998,
+    "node": "localhost",
+    "model": "Mistral-Small-3.2-24B-Instruct-2506-IQ4_NL.gguf",
+    "arch": "llama",
+    "quant": "IQ4_NL",
+    "ctx": 16384,
+    "profile": "mistral-big",
+    "perf": {
+      "prompt_tok_s": 145.9,
+      "gen_tok_s": 23.0,
+      "ttft_ms": 3509.0,
+      "total_ms": 9083.0,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 122,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 12,
+        "uclk_mhz": 450,
+        "temp_peak_c": 73.0,
+        "power_avg_w": 37.4
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789553444,
+    "node": "localhost",
+    "model": "Llama-3.2-3B-Instruct-Q8_0.gguf",
+    "arch": "llama",
+    "quant": "Q8_0",
+    "ctx": 65536,
+    "profile": "llama-light",
+    "perf": {
+      "prompt_tok_s": 1125.1,
+      "gen_tok_s": 90.8,
+      "ttft_ms": 455.1,
+      "total_ms": 1864.8,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 20,
+        "gfxclk_min": 2,
+        "gfxclk_max": 90,
+        "gfxclk_avg": 23,
+        "uclk_mhz": 450,
+        "temp_peak_c": 69.8,
+        "power_avg_w": 39.6
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789553403,
+    "node": "localhost",
+    "model": "LFM2.5-8B-A1B-UD-Q8_K_XL.gguf",
+    "arch": "lfm2moe",
+    "quant": "Q8_K_XL",
+    "ctx": 128000,
+    "profile": "lfm2",
+    "perf": {
+      "prompt_tok_s": 1089.8,
+      "gen_tok_s": 111.1,
+      "ttft_ms": 471.0,
+      "total_ms": 1623.0,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 62,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 33,
+        "uclk_mhz": 450,
+        "temp_peak_c": 66.5,
+        "power_avg_w": 44.1
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789550866,
+    "node": "localhost",
+    "model": "Mistral-Small-3.2-24B-Instruct-2506-IQ4_NL.gguf",
+    "arch": "llama",
+    "quant": "IQ4_NL",
+    "ctx": 32768,
+    "profile": "mistral-big",
+    "perf": {
+      "prompt_tok_s": 147.5,
+      "gen_tok_s": 23.0,
+      "ttft_ms": 3471.3,
+      "total_ms": 9045.2,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 122,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 8,
+        "uclk_mhz": 450,
+        "temp_peak_c": 73.8,
+        "power_avg_w": 36.1
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  },
+  {
+    "ts": 1789546952,
+    "node": "localhost",
+    "model": "Qwen3.8-27B-UD-IQ2_S.gguf",
+    "arch": "qwen35",
+    "quant": "IQ2_S",
+    "ctx": 98304,
+    "profile": "qwen35",
+    "perf": {
+      "prompt_tok_s": 125.5,
+      "gen_tok_s": 22.3,
+      "ttft_ms": 4079.0,
+      "total_ms": 9825.5,
+      "n_prompt": 512,
+      "n_gen": 128,
+      "telemetry": {
+        "samples": 83,
+        "gfxclk_min": 2,
+        "gfxclk_max": 100,
+        "gfxclk_avg": 20,
+        "uclk_mhz": 450,
+        "temp_peak_c": 73.0,
+        "power_avg_w": 33.9
+      }
+    },
+    "notes": "",
+    "build": "86d86ed4396b",
+    "cluster": null,
+    "cluster_members": []
+  }
+]
+
