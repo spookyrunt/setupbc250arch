@@ -93,7 +93,9 @@ sudo pacman -S --needed --noconfirm vulkan-tools mesa-utils
 # monitors: radeontop nvtop btop
 # rocm-smi-lib is required for the btop to show gpu
 sudo pacman -S --needed --noconfirm radeontop nvtop btop rocm-smi-lib
-# Edit shown_boxes or hit 5 from btop
+# Edit shown_boxes to add gpu0 - same as hitting 5 from btop
+mkdir -p ~/.config/btop
+btop --default-config >~/.config/btop/btop.conf
 sed -i \
   -e 's|^shown_boxes[[:space:]]*=.*|shown_boxes = "cpu mem net proc gpu0"|' \
   -e 's|^color_theme[[:space:]]*=.*|color_theme = "TTY"|' \
