@@ -90,8 +90,19 @@ sudo sed -i '/^[[:space:]]*#\[multilib\]/,/^[[:space:]]*#Include[[:space:]]*=.*m
 sudo pacman -Syu --noconfirm mesa vulkan-radeon lib32-vulkan-radeon
 sudo pacman -S --needed --noconfirm vulkan-tools mesa-utils
 
-# radeontop nvtop btop
-sudo pacman -S --needed --noconfirm radeontop nvtop btop
+# monitors: radeontop nvtop btop
+# rocm-smi-lib is required for the btop to show gpu
+sudo pacman -S --needed --noconfirm radeontop nvtop btop rocm-smi-lib
+# Edit shown_boxes or hit 5 from btop
+sed -i \
+  -e 's|^shown_boxes[[:space:]]*=.*|shown_boxes = "cpu mem net proc gpu0"|' \
+  -e 's|^color_theme[[:space:]]*=.*|color_theme = "TTY"|' \
+  ~/.config/btop/btop.conf
+# yq --input-format=toml --output-format=toml \
+#   '.shown_boxes = "cpu mem net proc gpu0" |
+#    .color_theme = "TTY"' \
+#   ~/.config/btop/btop.conf >/tmp/btop.conf &&
+#   mv /tmp/btop.conf ~/.config/btop/btop.conf
 
 # 8 core cpu unlock
 [ -d bc250-core-cu-unlock ] || git clone https://github.com/GabriWar/bc250-core-cu-unlock
