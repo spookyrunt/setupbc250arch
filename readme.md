@@ -13,7 +13,7 @@ These BC-250 installation scripts set up:
 - ACPI fix — C-States only, P-States excluded
 - GPU overclock to 2230MHz @ 1100mV (`cyan-skillfish-governor-smu`)
 - RADV driver (`mesa vulkan-radeon lib32-vulkan-radeon`)
-- Monitors (`radeontop nvtop`)
+- Monitors (`radeontop nvtop btop`)
 - CPU 8-core unlock (`bc250-core-cu-unlock`)
 - UMR for 40cu unlock (`umr`)
 - GPU from 24 to up to 40 CU/WGP unlock (`bc250-cu-live-manager.sh`)

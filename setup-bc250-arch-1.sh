@@ -90,8 +90,8 @@ sudo sed -i '/^[[:space:]]*#\[multilib\]/,/^[[:space:]]*#Include[[:space:]]*=.*m
 sudo pacman -Syu --noconfirm mesa vulkan-radeon lib32-vulkan-radeon
 sudo pacman -S --needed --noconfirm vulkan-tools mesa-utils
 
-# radeontop and nvtop
-sudo pacman -S --needed --noconfirm radeontop nvtop
+# radeontop nvtop btop
+sudo pacman -S --needed --noconfirm radeontop nvtop btop
 
 # 8 core cpu unlock
 [ -d bc250-core-cu-unlock ] || git clone https://github.com/GabriWar/bc250-core-cu-unlock
