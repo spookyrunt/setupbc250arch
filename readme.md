@@ -1,5 +1,5 @@
 # setupbc250arch
-Run the following scripts in order after [BIOS flashing](elektricm.github.io/amd-bc250-docs/bios/flashing)[^1][^2][^3] on Arch Linux.
+Run the following scripts in order after [BIOS flashing](https://elektricm.github.io/amd-bc250-docs/bios/flashing)[^1][^2][^3] on Arch Linux.
 1. `setup-bc250-arch-1.sh`
 2. `setup-bc250-arch-2.sh`
 3. `setup-llmtune.sh` (optional)
