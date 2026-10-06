@@ -130,7 +130,7 @@ quant_match = ["IQ3_XXS"]
 build = "vulkan"
 bin = "llama-server"
 env = { GGML_VULKAN_DEVICE = "0", GGML_VK_PREFER_HOST_MEMORY = "1" }
-flags = "--host 0.0.0.0 --port 8080 -c 98304 --parallel 1 --flash-attn on --no-mmap --spec-type draft-mtp --spec-draft-n-max 1 --reasoning off --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --cache-ram 0 --ctx-checkpoints 4"
+flags = "--host 0.0.0.0 --port 8080 -c 65536 --parallel 1 --flash-attn on --no-mmap --spec-type draft-mtp --spec-draft-n-max 1 --reasoning off --jinja -ngl 99 -t 8 -ctk q4_0 -ctv q4_0 --cache-ram 0 --ctx-checkpoints 4"
 
 # qwen35 (e.g. Qwen3.5-9B dense + MTP): same draft-mtp path, but the ~6-9GiB
 # weights leave UMA room for a bigger -c 98304 window.
